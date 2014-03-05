@@ -32,6 +32,9 @@ foreach(DEP ${PKG_DEP})
 	target_link_libraries(task_joint_limit_clamping ${${DEP}_LDFLAGS})
 endforeach(DEP)
 
+# install python wrapper
+add_subdirectory(src)
+
 install(TARGETS ${PROJECT_NAME}
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
