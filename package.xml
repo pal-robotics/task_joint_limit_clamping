@@ -16,11 +16,13 @@
   <build_depend>jrl-mathtool</build_depend>
   <build_depend>dynamic-graph</build_depend>
   <build_depend>dynamic-graph-python</build_depend>
+  <build_depend>sot-dyninv</build_depend>
 
   <run_depend>sot-core</run_depend>
   <run_depend>jrl-mal</run_depend>
   <run_depend>jrl-mathtool</run_depend>
   <run_depend>dynamic-graph</run_depend>
   <run_depend>dynamic-graph-python</run_depend>
+  <run_depend>sot-dyninv</run_depend>
 
 </package>

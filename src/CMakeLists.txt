@@ -15,7 +15,7 @@
 
 # Libraries DEFINITIONS and INCLUDES
 
-INCLUDE(../cmake/python.cmake)
+INCLUDE(${SOT_CMAKE_DIR}/python.cmake)
 
 SET(LIBRARY_NAME ${PROJECT_NAME})
 
@@ -30,14 +30,6 @@ ADD_LIBRARY(${LIBRARY_NAME}
   ../include/sot-dyninv/TaskJointLimitClamping.hh
   )
 
-SET_TARGET_PROPERTIES(${LIBRARY_NAME}
-  PROPERTIES
-  SOVERSION ${PROJECT_VERSION}
-  INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
-
-# Add dynamic-graph-python compilation flags and link to dependency libraries
-PKG_CONFIG_USE_DEPENDENCY(${PROJECT_NAME} dynamic-graph-python)
-
 INSTALL(TARGETS ${LIBRARY_NAME}
   DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 
@@ -46,5 +38,5 @@ SET(NEW_ENTITY_CLASS
   )
 #PYTHON_INSTALL_ON_SITE("dynamic_graph/sot/core" "meta_task_joint_limit_clamping.py")
 
-DYNAMIC_GRAPH_PYTHON_MODULE("/sot/dyninv/task_joint_limit_clamping" ${LIBRARY_NAME} wrap)
+DYNAMIC_GRAPH_PYTHON_MODULE("/sot/dyninv/task_joint_limit_clamping" ${LIBRARY_NAME} jl_wrap)
 
